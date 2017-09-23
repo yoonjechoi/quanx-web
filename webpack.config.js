@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: {
@@ -32,15 +32,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: [[
-                'env', {
-                  targets: {
-                    browsers: [
-                      'last 2 versions',
-                    ],
-                  },
-                },
-              ]],
+              presets: ['es2015', 'react'],
 
             },
           },
@@ -56,4 +48,4 @@ module.exports = {
     ],
   },
 
-}
+};
