@@ -3,16 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
+console.log(path.resolve(__dirname, 'dist'))
+
 module.exports = {
   entry: {
     main: './src/app/entry.js',
   },
 
-  devtool: 'inline-source-map',
-
-  devServer: {
-    contentBase: './dist',
-    hot: true,
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
   },
 
   plugins: [
@@ -20,13 +20,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Webpack2 playground',
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
-
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-  },
 
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
