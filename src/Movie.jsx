@@ -7,8 +7,8 @@ class Movie extends Component {
   render() {
     return (
       <div>
-        <MoviePoster poster="https://upload.wikimedia.org/wikipedia/en/0/05/Now_You_See_Me_Cover.jpg"/>
-        <h3>Now you see me</h3>
+        <MoviePoster poster={this.props.poster}/>
+        <h3>{this.props.title}</h3>
       </div>
     );
   }
