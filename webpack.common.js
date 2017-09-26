@@ -7,7 +7,7 @@ console.log(path.resolve(__dirname, 'dist'))
 
 module.exports = {
   entry: {
-    main: './src/app/entry.js',
+    main: './src/entry.jsx',
   },
 
   output: {
@@ -16,9 +16,10 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    // new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Webpack2 playground',
+      template: './src/index.html',
     }),
   ],
 
