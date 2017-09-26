@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
-console.log(path.resolve(__dirname, 'dist'))
+console.log(path.resolve(__dirname, 'dist'));
 
 module.exports = {
   entry: {
@@ -47,7 +47,10 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['es2015', 'react'],
-              plugins: ['react-hot-loader/babel'],
+              plugins: [
+                'react-hot-loader/babel',
+                ['transform-class-properties', { spec: true }],
+              ],
             },
           },
 
